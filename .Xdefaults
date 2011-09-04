@@ -1,0 +1,13 @@
+urxvt*scrollBar::false
+urxvt*geometry:120x40
+urxvt*saveLines:10000
+urxvt*transparent:true
+urxvt*transpscrollbar:true
+urxvt*shading:20
+urxvt*foreground:grey
+urxvt*background:black
+urxvt*font: xft:Envy Code R:size=8
+!urxvt*font: xft:Inconsolata:size=10
+!urxvt*font: xft:MonteCarlo:style=Sans
+!urxvt*font: -*-profont-*-*-*-*-12-*-*-*-*-*-iso8859-*
+!urxvt*boldFont: -*-profont-*-*-*-*-12-*-*-*-*-*-iso8859-*

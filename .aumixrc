@@ -1,0 +1,12 @@
+vol:0:0:P
+pcm:63:63:P
+speaker:0:0:P
+line:0:0:P
+mic:0:0:R
+cd:63:63:P
+pcm2:63:63:P
+igain:0:0:P
+line1:0:0:P
+phin:0:0:P
+phout:0:0:P
+video:0:0:P
