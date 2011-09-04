@@ -1,0 +1,32 @@
+defflow off
+altscreen on
+vbell on
+startup_message off
+defscrollback 10000
+attrcolor d "b"
+attrcolor u "G"
+attrcolor b "C"
+attrcolor s "= kR"
+attrcolor r "k"
+attrcolor B "Y"
+vbell_msg ding!
+
+# colors!  these came from somewhere... where I don't remember...
+# allow bold colors - necessary for some reason
+attrcolor b ".I" 
+# tell screen how to set colors. AB = background, AF=foreground 
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm' 
+# erase background with current bg color 
+defbce "on" 
+
+nethack on
+
+# this shows you the current date, hostname, and load averages.  it
+# also lists all of your windows with the current window name centered
+# and highlighted.
+#
+# screenshot: http://coyled.com/images/prompt.png
+#
+hardstatus on
+hardstatus alwayslastline '%{= G}%D, %M %d, %Y %=%{W} %{g}%{.w}%H %{.c}[%l]'
+caption always "%= %-w%L>%{= Y}%n %t%{-}%52<%+w %L="
