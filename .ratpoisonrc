@@ -1,0 +1,33 @@
+# action key
+escape C-f
+
+# oooh.  pretty background.
+#
+# below is for a background image split between three displays.  image
+# is http://www.digitalblasphemy.com/preview.shtml?i=novembersnow
+# (buy a membership.  the backgrounds are great, and it's the guy's
+# full-time job.)
+exec /usr/bin/xv -quit -root -max -best24 -display :1.0 ~/pics/backgrounds/novembersnow3x_split_left.jpg
+exec /usr/bin/xv -quit -root -max -best24 -display :1.1 ~/pics/backgrounds/novembersnow3x_split_middle.jpg
+exec /usr/bin/xv -quit -root -max -best24 -display :1.2 ~/pics/backgrounds/novembersnow3x_split_right.jpg
+#
+# or a plain solid black background...
+#exec xsetroot -solid black -cursor_name left_ptr
+
+# window bordering
+defborder 1
+# deffgcolor black 
+# defbgcolor white
+defwinfmt '%t [%n] %s %t %a %c %i %l'
+windows
+
+# other key bindings
+bind c exec /usr/bin/urxvt
+bind f exec /usr/bin/firefox
+bind l exec /usr/X11R6/bin/xscreensaver-command -lock
+bind R restart
+bind o nextscreen
+
+# restore frame settings
+bind at exec /usr/bin/ratpoison -c "exec /usr/bin/ratpoison -c 'fdump' > ~/.ratpoison_sav"
+bind L  exec /usr/bin/ratpoison -c "frestore `cat ~/.ratpoison_sav`"
