@@ -9,7 +9,8 @@ bindkey "\e[A" up-line-or-search
 bindkey "\e[B" down-line-or-search
 
 # so accidentally hitting ctrl-s in screen doesn't lock things up...
-stty -ixon
+#stty -ixon
+setopt noflowcontrol
 
 umask 0022
 
