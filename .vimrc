@@ -5,6 +5,7 @@ set shiftwidth=4
 set tabstop=4
 set textwidth=70
 set shiftround
+set hlsearch
 
 syntax on
 
