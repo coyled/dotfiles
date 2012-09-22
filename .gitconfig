@@ -1,7 +1,11 @@
 [user]
-	name = Dave Coyle
-	email = hello@coyled.com
+    name = Dave Coyle
+    email = hello@coyled.com
 [core]
     autocrlf = input
 [github]
-	user = coyled
+    user = coyled
+[color]
+    ui = auto
+[alias]
+    unadd = reset HEAD
