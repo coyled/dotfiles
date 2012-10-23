@@ -6,4 +6,9 @@
 [github]
     user = coyled
 [color]
-    ui = 1
+    ui = true
+[alias]
+    unadd = reset HEAD
+
+    # from http://www.jukie.net/bart/blog/pimping-out-git-log
+    plog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
