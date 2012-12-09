@@ -1,0 +1,78 @@
+# envelope from = from: (different for muttng)
+set envelope_from=yes
+
+# hide all headers...
+ignore *
+# ...except these.
+unignore from to cc subject date resent-from resent-to resent-date reply-to
+# headers must be in this order
+hdr_order date from to cc subject
+
+set attribution="On %[%Y-%m-%d %H:%M:%S %z], %a wrote:"
+# RFC 2822 format...
+#set attribution="On %[%a, %d %b %Y %H:%M:%S %z], %a wrote:"
+set autoedit=yes
+set edit_headers=yes
+set editor="vim +':set textwidth=70' +':set filetype=mail'"
+set forward_format="fwd: %s"
+set index_format=" %[%y %b %d, %H:%M]   %Z %-15.15F  %s"
+set ispell="/usr/bin/ispell"
+unset mark_old
+set mime_forward=yes
+set move=no
+set pager_index_lines=10
+set pager_stop=yes
+set reverse_alias=yes
+set sendmail_wait=-1
+set sidebar_visible=yes
+set sidebar_width=25
+unset sig_dashes
+set sleep_time=0
+set smart_wrap=yes
+set sort=threads
+set sort_aux=last-date-received
+set timeout=30
+set markers=no
+
+# stupid html email
+set implicit_autoview
+auto_view text/html
+set mailcap_path="~/.mailcap"
+
+macro index S  "<shell-escape>/usr/local/bin/mairix "
+macro index a  "<save-message>+INBOX.Archive<enter><enter>"
+
+# ooh.  pretty colors.
+color normal        white       default
+color tree          magenta     default
+color indicator     black       white
+#color sidebar_new   cyan        default
+color status        white       blue
+color hdrdefault    red         default
+color header        brightred   default ^(From|Subject):
+color index red     default ~D      # deleted
+
+bind pager \e exit
+
+# sidebar stuff
+bind index      \Cu             sidebar-prev
+bind index      \Cd             sidebar-next
+bind index      \Co             sidebar-open
+bind pager      \Cu             sidebar-prev
+bind pager      \Cd             sidebar-next
+bind pager      \Co             sidebar-open
+color sidebar_new       cyan    default
+
+bind pager      <esc>   exit
+bind pager      <up>    previous-line
+bind pager      <down>  next-line
+
+#unset ascii_chars
+unset collapse_unread
+set pager_stop
+set strict_threads
+set wrap_search
+
+# IMAP
+set mail_check=30
+set timeout=10
