@@ -41,6 +41,7 @@ set mailcap_path="~/.mailcap"
 
 macro index S  "<shell-escape>/usr/local/bin/mairix "
 macro index a  "<save-message>+INBOX.Archive<enter><enter>"
+macro pager a  "<save-message>+INBOX.Archive<enter><enter>"
 
 # ooh.  pretty colors.
 color normal        white       default
