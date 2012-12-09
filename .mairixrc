@@ -1,0 +1,11 @@
+base=~/mail
+database=~/mail/.mairix/database
+
+# results dir...
+mformat=maildir
+mfolder=/Users/foo/mail/SEARCH
+
+# index everything in base, recursively...
+maildir=*...
+
+omit=SEARCH:INBOX.Drafts
