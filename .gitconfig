@@ -8,6 +8,7 @@
 [color]
     ui = true
 [alias]
+    rtu = reset --hard @{u}
     unadd = reset HEAD
 
     # from http://www.jukie.net/bart/blog/pimping-out-git-log
