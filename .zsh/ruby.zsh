@@ -1,3 +1,3 @@
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+eval "$(rbenv init -)"
 
 export GEM_HOME=~/.gem
