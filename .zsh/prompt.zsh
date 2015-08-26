@@ -5,3 +5,6 @@ colors
 
 PROMPT=' %n@%m: %~ $(git_super_status) $fg[magenta]--->%{$reset_color%}
  %# '
+
+# vi mode
+bindkey -v
