@@ -7,4 +7,7 @@ alias whois="whois -H"
 
 if [ `uname -s` != 'Darwin' ]; then
     alias ls="ls --color"
+
+    # ls files that are open but have been deleted...
+    alias lsof-unlinked="lsof -nP +L1"
 fi
