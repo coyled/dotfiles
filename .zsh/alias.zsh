@@ -1,5 +1,4 @@
 alias history="history -t '%Y-%m-%dT%H:%M:%S %Z'"
-alias install-rbenv="git clone git://github.com/sstephenson/rbenv.git ~/.rbenv"
 alias ls="ls --color"
 alias screen="export TERM=screen; screen"
 alias sl="readlink -e"
