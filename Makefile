@@ -15,6 +15,7 @@ install:
 	@if [ ! -d ${rbenv_dir} ]; then \
 		git clone ${rbenv_repo} ${rbenv_dir} ; \
 	fi
+	@echo "!!! you may need to 'sudo apt install ruby-build'"
 
 	@echo "done!"
 
