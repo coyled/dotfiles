@@ -11,3 +11,5 @@ if [ `uname -s` != 'Darwin' ]; then
     # ls files that are open but have been deleted...
     alias lsof-unlinked="lsof -nP +L1"
 fi
+
+alias restart-gpg-agent="gpg-connect-agent reloadagent /bye"
