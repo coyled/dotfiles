@@ -11,6 +11,8 @@ attrcolor r "k"
 attrcolor B "Y"
 vbell_msg ding!
 
+term    screen-256color
+
 # use bright colors for bold text
 attrcolor b ".I"
 # make bright text also bold
