@@ -13,3 +13,4 @@ if [ `uname -s` != 'Darwin' ]; then
 fi
 
 alias restart-gpg-agent="gpg-connect-agent reloadagent /bye"
+alias kubeshell="kubectl run edge --tty -i --restart=Never --image=alpine:edge sh"
