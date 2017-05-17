@@ -1,3 +1,5 @@
+set encoding=utf-8
+
 set expandtab
 set incsearch
 set ruler
@@ -6,6 +8,9 @@ set tabstop=4
 set textwidth=70
 set shiftround
 set hlsearch
+set number
+
+highlight LineNr ctermfg=darkblue
 
 syntax on
 
