@@ -18,3 +18,5 @@ syntax on
 
 "autoformat paragraphs (e.g. mutt inline quotations)
 "set formatoptions+=a
+
+map <C-t> :NERDTreeToggle<CR>
