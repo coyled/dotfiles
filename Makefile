@@ -4,7 +4,7 @@ rubybuild_dir = ${rbenv_dir}/plugins/ruby-build
 origin_dir = ${PWD}
 
 FILES := .aumixrc .ratpoisonrc .vimrc .xinitrc .zshenv .bash_history \
-	 .gitconfig .screenrc .Xdefaults .zsh .zshrc
+	 .gitconfig .screenrc .vim .Xdefaults .zsh .zsh-git-prompt .zshrc
 
 install:
 	@echo "rm'ing old files..."
@@ -26,11 +26,6 @@ install:
 	else \
 		git clone https://github.com/rbenv/ruby-build.git ${rubybuild_dir} ; \
 	fi
-
-	@echo "installing VIM's pathogen..."
-	mkdir -p ~/.vim/autoload ~/.vim/bundle
-	curl -L -o ~/.vim/autoload/pathogen.vim \
-		https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
 	@echo "done!"
 
