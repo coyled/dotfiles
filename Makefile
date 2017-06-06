@@ -27,6 +27,11 @@ install:
 		git clone https://github.com/rbenv/ruby-build.git ${rubybuild_dir} ; \
 	fi
 
+	@echo "installing VIM's pathogen..."
+	mkdir -p ~/.vim/autoload ~/.vim/bundle
+	curl -L -o ~/.vim/autoload/pathogen.vim \
+		https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+
 	@echo "done!"
 
 .PHONY: install
