@@ -10,6 +10,9 @@ set shiftround
 set hlsearch
 set number
 
+set list
+set listchars=tab:␉·,trail:⎵
+
 highlight LineNr ctermfg=darkblue
 
 syntax on
