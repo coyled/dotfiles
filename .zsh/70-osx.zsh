@@ -1,5 +1,8 @@
 if [[ $(uname -s) == 'Darwin' ]]; then
 
+    # load homebrew tab completions...
+    fpath=(/usr/local/share/zsh-completions $fpath)
+
     # don't swallow ctrl-o so i can use it in mutt...
     stty discard undef
 
