@@ -12,4 +12,7 @@ if [[ $(uname -s) == 'Darwin' ]]; then
     source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
     source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 
+    # for brew-provided python2.7...
+    export PATH="/usr/local/opt/python/libexec/bin:${PATH}"
+
 fi
