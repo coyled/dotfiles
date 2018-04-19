@@ -12,7 +12,12 @@ branch, error = gitsym.communicate()
 
 error_string = error.decode('utf-8')
 
-if 'fatal: Not a git repository' in error_string:
+#
+# bug with git >=2.17
+# https://github.com/olivierverdier/zsh-git-prompt/issues/103
+# patched below...
+#
+if 'fatal: not a git repository' in error_string.lower():
 	sys.exit(0)
 
 branch = branch.decode("utf-8").strip()[11:]
