@@ -15,4 +15,6 @@ if [[ $(uname -s) == 'Darwin' ]]; then
     # for brew-provided python2.7...
     export PATH="/usr/local/opt/python/libexec/bin:${PATH}"
 
+    alias battery="pmset -g batt"
+
 fi
