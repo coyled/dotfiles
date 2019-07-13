@@ -7,10 +7,12 @@ if [[ $(uname -s) == 'Darwin' ]]; then
     stty discard undef
 
     #
-    # brew cask install google-cloud-sdk
+    # need to `brew cask install google-cloud-sdk` first...
     #
-    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+    if [[ -d /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk ]]; then
+        source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+        source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+    fi
 
     # for brew-provided python2.7...
     export PATH="/usr/local/opt/python/libexec/bin:${PATH}"
