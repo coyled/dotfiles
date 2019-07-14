@@ -23,6 +23,3 @@ syntax on
 "set formatoptions+=a
 
 map <C-t> :NERDTreeToggle<CR>
-
-" load plugins...
-execute pathogen#infect()
