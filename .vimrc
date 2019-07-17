@@ -26,3 +26,9 @@ syntax on
 "set formatoptions+=a
 
 map <C-t> :NERDTreeToggle<CR>
+
+" ctrl-left in insert mode: -1 indent level...
+inoremap <ESC>[1;5D <C-d>
+
+" ctrl-right in insert mode: +1 indent level...
+inoremap <ESC>[1;5C <C-t>
