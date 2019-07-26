@@ -19,4 +19,7 @@ if [[ $(uname -s) == 'Darwin' ]]; then
 
     alias battery="pmset -g batt"
 
+    # yubikey-stored keys for ssh...
+    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+
 fi
