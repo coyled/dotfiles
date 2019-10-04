@@ -1,0 +1,2 @@
+match Comment /#.*/
+syntax off
