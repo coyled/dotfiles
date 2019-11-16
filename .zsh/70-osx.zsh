@@ -22,4 +22,7 @@ if [[ $(uname -s) == 'Darwin' ]]; then
     # yubikey-stored keys for ssh...
     export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
+    # start gpg-agent if necessary...
+    gpg-connect-agent /bye
+
 fi
