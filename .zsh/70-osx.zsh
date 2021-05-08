@@ -1,21 +1,22 @@
 if [[ $(uname -s) == 'Darwin' ]]; then
 
-    # load homebrew tab completions...
-    fpath=(/usr/local/share/zsh-completions $fpath)
-
     # don't swallow ctrl-o so i can use it in mutt...
     stty discard undef
 
     #
-    # need to `brew cask install google-cloud-sdk` first...
+    # M1 stuff...
     #
-    if [[ -d /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk ]]; then
-        source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-        source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
-    fi
+    if [[ $(uname -p) == 'arm' ]]; then
+        eval "$(/opt/homebrew/bin/brew shellenv)"
 
-    # for brew-provided python2.7...
-    export PATH="/usr/local/opt/python/libexec/bin:${PATH}"
+        #
+        # need to `brew install --cask google-cloud-sdk` first...
+        #
+        if [[ -d /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk ]]; then
+            source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+            source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+        fi
+    fi
 
     alias battery="pmset -g batt"
 
