@@ -16,7 +16,7 @@ else
 fi
 
 PROMPT=' %n@%m: %~ $(git_super_status) $fg[magenta]--->%{$reset_color%}
- %# '
+%(1j. [%j].) %# '
 
 # vi mode
 bindkey -v
