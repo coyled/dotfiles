@@ -16,12 +16,15 @@ set comments=s1:/*,fmb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
 set list
 set listchars=tab:␉·,trail:⎵
 
-highlight LineNr ctermfg=darkblue
 " use all the colors...
 set term=builtin_ansi
 set t_Co=256
 
 syntax on
+
+" change colors after enabling syntax highlighting...
+highlight LineNr ctermfg=26
+highlight Comment ctermfg=26
 
 "map <F5> : !ispell %<CR>: e %<CR>
 
