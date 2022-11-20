@@ -17,6 +17,9 @@ set list
 set listchars=tab:␉·,trail:⎵
 
 highlight LineNr ctermfg=darkblue
+" use all the colors...
+set term=builtin_ansi
+set t_Co=256
 
 syntax on
 

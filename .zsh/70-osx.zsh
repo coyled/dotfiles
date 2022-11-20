@@ -26,4 +26,9 @@ if [[ $(uname -s) == 'Darwin' ]]; then
     # start gpg-agent if necessary...
     gpg-connect-agent /bye
 
+    # screen from homebrew is newer and has all the colors...
+    if [[ -f /opt/homebrew/bin/screen ]]; then
+      alias screen=/opt/homebrew/bin/screen
+    fi
+
 fi
