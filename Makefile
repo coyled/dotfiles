@@ -1,5 +1,6 @@
 #
-# remember: tabs not spaces
+# vim: noexpandtab
+# ^^^ remember: tabs not spaces here
 #
 rbenv_repo = git://github.com/sstephenson/rbenv.git
 rbenv_dir = ${HOME}/.rbenv
