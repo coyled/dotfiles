@@ -10,11 +10,13 @@ if [[ $(uname -s) == 'Darwin' ]]; then
         eval "$(/opt/homebrew/bin/brew shellenv)"
 
         #
-        # need to `brew install --cask google-cloud-sdk` first...
+        # need to install
+        # [CLI](https://cloud.google.com/sdk/docs/install) tarball at
+        # ~/.google-cloud-sdk first.  don't use the homebrew cask...
         #
-        if [[ -d /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk ]]; then
-            source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-            source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+        if [[ -d ~/.google-cloud-sdk ]]; then
+            source ~/.google-cloud-sdk/path.zsh.inc
+            source ~/.google-cloud-sdk/completion.zsh.inc
         fi
     fi
 
