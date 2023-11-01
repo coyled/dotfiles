@@ -12,6 +12,8 @@ set number
 set scrolloff=4
 set autoindent
 set comments=s1:/*,fmb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+set modeline
+set modelines=4
 
 set list
 set listchars=tab:␉·,trail:⎵
