@@ -19,6 +19,7 @@ alias curl-timing='curl -w \
     -o /dev/null -s'
 alias history="history -t '%Y-%m-%dT%H:%M:%S %Z'"
 alias lc='tr "[A-Z]" "[a-z]"'
+alias uc='tr "[a-z]" "[A-Z]"'
 alias pwgen='apg -a 1 -m 32 -x 32 -M SNCL -n 1 -c /dev/random'
 alias sl="readlink -e"
 alias urlencode='ruby -e "require \"erb\"; puts ERB::Util.url_encode(ARGV[0])"'
