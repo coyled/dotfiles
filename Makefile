@@ -2,7 +2,7 @@
 # vim: noexpandtab
 # ^^^ remember: tabs not spaces here
 #
-rbenv_repo = git://github.com/rbenv/rbenv.git
+rbenv_repo = https://github.com/rbenv/rbenv.git
 rbenv_dir = ${HOME}/.rbenv
 rubybuild_dir = ${rbenv_dir}/plugins/ruby-build
 origin_dir = ${PWD}
