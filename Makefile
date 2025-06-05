@@ -11,8 +11,8 @@ origin_dir = ${PWD}
 MKDIRS := .gnupg
 
 FILES := .aumixrc .ratpoisonrc .vimrc .xinitrc .zshenv .bash_history \
-	.gitconfig .gnupg/gpg-agent.conf .screenrc .vim .Xdefaults .zsh \
-	.zsh-git-prompt .zshrc
+	.gitconfig .gnupg/gpg-agent.conf .screenrc .tmux.conf .vim \
+	.Xdefaults .zsh .zsh-git-prompt .zshrc
 
 install:
 	@echo "rm'ing old files..."
