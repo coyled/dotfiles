@@ -15,7 +15,16 @@ else
     echo "oops.  can't find python.  no git prompt for you."
 fi
 
-PROMPT=' %n@%m: %~ $(git_super_status) $fg[magenta]--->%{$reset_color%}
+PROMPT_HOSTNAME=$HOSTNAME
+
+#
+# if we're in a Podman container add its name to the prompt...
+#
+if [[ -e /run/.containerenv ]]; then
+    PROMPT_HOSTNAME="${PROMPT_HOSTNAME}[$(cat /run/.containerenv | awk -F '\"' '/name=/ {print $2}')]"
+fi
+
+PROMPT=' %n@${PROMPT_HOSTNAME}: %~ $(git_super_status) $fg[magenta]--->%{$reset_color%}
 %(1j. [%j].) %# '
 
 # vi mode
