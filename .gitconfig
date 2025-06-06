@@ -22,3 +22,5 @@
     date = iso8601-local
 [init]
     defaultBranch = main
+[commit]
+    verbose = true
