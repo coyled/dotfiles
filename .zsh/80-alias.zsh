@@ -38,3 +38,10 @@ alias kubeshell="kubectl run edge --tty -i --restart=Never --image=alpine:edge s
 
 # since `which` isn't in Debian anymore...
 alias which="command -v"
+
+#
+# if we're in a container...
+#
+if [ -e /run/.containerenv ]; then
+    alias tmux="tmux -L $(cat /run/.containerenv | awk -F '\"' '/name=/ {print $2}')"
+fi
