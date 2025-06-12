@@ -28,6 +28,6 @@ if [[ $(uname -s) == 'Darwin' ]]; then
     fi
 
     # needed for prompts later...
-    export HOSTNAME=$(scutil --get ComputerName)
+    export HOSTNAME=$(/usr/sbin/scutil --get ComputerName)
 
 fi
