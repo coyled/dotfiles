@@ -27,4 +27,7 @@ if [[ $(uname -s) == 'Darwin' ]]; then
       alias screen=/opt/homebrew/bin/screen
     fi
 
+    # needed for prompts later...
+    export HOSTNAME=$(scutil --get ComputerName)
+
 fi
