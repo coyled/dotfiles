@@ -34,6 +34,7 @@ if [ `uname -s` != 'Darwin' ]; then
     alias whois="whois -H"
 fi
 
+alias restart-gpg-agent="gpg-connect-agent reloadagent /bye"
 alias kubeshell="kubectl run edge --tty -i --restart=Never --image=alpine:edge sh"
 
 # since `which` isn't in Debian anymore...
