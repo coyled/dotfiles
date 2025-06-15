@@ -17,6 +17,14 @@ if [[ $(uname -s) == 'Darwin' ]]; then
         if [[ -d ~/.google-cloud-sdk ]]; then
             source ~/.google-cloud-sdk/path.zsh.inc
             source ~/.google-cloud-sdk/completion.zsh.inc
+
+            #
+            # gcloud recently started saying it prefers Python 3.12...
+            #
+            PYTHON_PATH="${HOMEBREW_PREFIX}/bin/python3.12"
+            if [[ -f $PYTHON_PATH ]]; then
+                export CLOUDSDK_PYTHON=$PYTHON_PATH
+            fi
         fi
     fi
 
