@@ -15,6 +15,12 @@ FILES := .aumixrc .ratpoisonrc .vimrc .xinitrc .zshenv .bash_history \
 	.Xdefaults .zsh .zsh-git-prompt .zshrc
 
 install:
+	@echo "verifying git is installed..."
+	@if ! command -v git; then \
+		echo "git required but not found"; \
+		exit 1; \
+	fi
+
 	@echo "rm'ing old files..."
 	$(foreach FILE, $(FILES), $(shell rm ~/$(FILE)))
 
