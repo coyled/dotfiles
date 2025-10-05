@@ -12,6 +12,8 @@
 [alias]
     alias = ! git config --get-regexp ^alias. | sed 's/^alias.//' | sed 's/ /=/'
     rtu = reset --hard @{u}
+    set-upstream = branch --set-upstream-to
+    short-hash = rev-parse --short
     track = checkout -t
     unadd = reset HEAD
     uncommit = reset --soft HEAD^
