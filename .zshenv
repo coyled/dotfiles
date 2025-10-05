@@ -1,1 +1,1 @@
-.zshrc
+export HOSTNAME=$(hostname -s)
