@@ -1,5 +1,6 @@
 # yubikey-stored keys for ssh...
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+export GPG_TTY="$(tty)"
 
 # start gpg-agent if necessary...
 gpg-connect-agent /bye
