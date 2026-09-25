@@ -21,7 +21,20 @@ PROMPT_HOSTNAME=$HOSTNAME
 # if we're in a Podman container add its name to the prompt...
 #
 if [[ -e /run/.containerenv ]]; then
-    PROMPT_HOSTNAME="${PROMPT_HOSTNAME}[$(cat /run/.containerenv | awk -F '\"' '/name=/ {print $2}')]"
+    if [[ -e /run/host/container-name ]]; then
+      #
+      # possible Quadlet-created container name injection if the
+      # container is unprivileged...
+      #
+      CONTAINER_NAME=$(cat /run/host/container-name)
+    else
+      #
+      # only available in privileged containers...
+      #
+      CONTAINER_NAME=$(cat /run/.containerenv | awk -F '=' '/name=/ {print $2}')]
+    fi
+
+    PROMPT_HOSTNAME="${PROMPT_HOSTNAME}[$CONTAINER_NAME]"
 fi
 
 PROMPT=' %n@${PROMPT_HOSTNAME}: %~ $(git_super_status) $fg[magenta]--->%{$reset_color%}
