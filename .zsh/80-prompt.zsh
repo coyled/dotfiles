@@ -3,12 +3,14 @@ colors
 
 #
 # ubuntu >= 18.04 doen't ship with python2 but we can't assume python3
-# is installed everywhere so test which exists...
+# is installed everywhere so test which exists.  also accommodate
+# wrappers like safe-chain where a wrapper function may be defined
+# even if the underlying executable doesn't exist...
 #
-if [[ -e $(which python3) ]]; then
+if python3 -c 'pass' >/dev/null 2>&1; then
     GIT_PROMPT_EXECUTABLE="python3"
     . ~/.zsh-git-prompt/zshrc.sh
-elif [[ -e $(which python) ]]; then
+elif python -c 'pass' >/dev/null 2>&1; then
     GIT_PROMPT_EXECUTABLE="python"
     . ~/.zsh-git-prompt/zshrc.sh
 else
