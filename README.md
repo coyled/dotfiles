@@ -18,6 +18,13 @@ Fedora:
     % make
 ```
 
+Debian:
+
+```
+    % sudo apt install stow
+    % make
+```
+
 
 migration
 ---------
