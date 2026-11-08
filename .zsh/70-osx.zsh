@@ -30,11 +30,7 @@ if [[ $(uname -s) == 'Darwin' ]]; then
 
     alias battery="pmset -g batt"
 
-    # yubikey-stored keys for ssh...
-    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-
-    # start gpg-agent if necessary...
-    gpg-connect-agent /bye
+    export SSH_AUTH_SOCK=$HOME/.ssh/agent.sock
 
     # screen from homebrew is newer and has all the colors...
     if [[ -f /opt/homebrew/bin/screen ]]; then
