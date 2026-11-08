@@ -32,7 +32,7 @@ check:
 link:
 	@echo "symlinking $(GROUPS)..."
 	ln -sf /dev/null $(TARGET)/.bash_history
-	stow -t $(TARGET) $(GROUPS)
+	stow --no-folding -t $(TARGET) $(GROUPS)
 
 rbenv:
 	@echo "installing or updating rbenv..."
