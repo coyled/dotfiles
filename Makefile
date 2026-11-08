@@ -2,34 +2,39 @@
 # vim: noexpandtab
 # ^^^ remember: tabs not spaces here
 #
+
+OS     := $(shell uname -s | tr '[:upper:]' '[:lower:]' | sed 's/^darwin$$/macos/')
+GROUPS := $(wildcard common $(OS))
+TARGET := $(HOME)
+DEPS   := stow git
+
 rbenv_repo = https://github.com/rbenv/rbenv.git
 rbenv_dir = ${HOME}/.rbenv
 rubybuild_dir = ${rbenv_dir}/plugins/ruby-build
 origin_dir = ${PWD}
 
-# empty dirs for symlinked files...
-MKDIRS := .gnupg
+#install: check link rbenv
+install: check link
+	@echo "done!"
 
-FILES := .aumixrc .ratpoisonrc .vimrc .xinitrc .zshenv .bash_history \
-	.gitconfig .gnupg/gpg-agent.conf .screenrc .tmux.conf .vim \
-	.Xdefaults .zsh .zsh-git-prompt .zshrc
+check:
+	@echo "veifying dependencies..."
+	@for dep in $(DEPS); do \
+		if ! command -v $$dep; then \
+			echo "$$dep required but not found"; \
+			exit 1; \
+		fi; \
+	done
 
-install:
-	@echo "verifying git is installed..."
-	@if ! command -v git; then \
-		echo "git required but not found"; \
-		exit 1; \
-	fi
+	@echo "stow dry run..."
+	stow -n -v -t $(TARGET) $(GROUPS)
 
-	@echo "rm'ing old files..."
-	$(foreach FILE, $(FILES), $(shell rm ~/$(FILE)))
+link:
+	@echo "symlinking $(GROUPS)..."
+	ln -sf /dev/null $(TARGET)/.bash_history
+	stow -t $(TARGET) $(GROUPS)
 
-	@echo "mk'ing empty dirs..."
-	$(foreach DIR, $(MKDIRS), $(shell mkdir ~/$(DIR)))
-
-	@echo "symlinking files..."
-	$(foreach FILE, $(FILES), $(shell ln -s $(PWD)/$(FILE) ~/$(FILE)))
-
+rbenv:
 	@echo "installing or updating rbenv..."
 	@if [ -d ${rbenv_dir} ]; then \
 		cd ${rbenv_dir} && git fetch origin && git rtu && cd ${origin_dir} ; \
@@ -43,7 +48,5 @@ install:
 	else \
 		git clone https://github.com/rbenv/ruby-build.git ${rubybuild_dir} ; \
 	fi
-
-	@echo "done!"
 
 .PHONY: install
